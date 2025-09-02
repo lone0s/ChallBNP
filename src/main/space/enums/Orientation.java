@@ -1,68 +1,72 @@
-package main.rover_stuff.space;
+package main.space.enums;
 
-public enum CardinalPoint {
+import main.space.Position;
+
+public enum Orientation {
 //    TODO: Ajouter des safeguards parce que si la position est hors grid ca doit bloquer !!!
-    NORTH {
+//     Je ne veux pas que l'Orientation ai connaissance de la grille
+    N
+        {
         @Override
         public Position goForward(Position position) {
             return new Position(position.x, position.y + 1);
         }
         @Override
-        public Direction rotateLeft() {
-            return new Direction(WEST);
+        public Orientation rotateLeft() {
+            return W;
         }
         @Override
-        public Direction rotateRight() {
-            return new Direction(EAST);
+        public Orientation rotateRight() {
+            return E;
         }
     },
 
-    SOUTH {
+    S {
         @Override
         public Position goForward(Position position) {
             return new Position(position.x, position.y - 1);
         }
         @Override
-        public Direction rotateLeft() {
-            return new Direction(WEST);
+        public Orientation rotateLeft() {
+            return E;
         }
         @Override
-        public Direction rotateRight() {
-            return new Direction(EAST);
+        public Orientation rotateRight() {
+            return W;
         }
     },
 
-    WEST{
+    W {
         @Override
         public Position goForward(Position position) {
             return new Position(position.x - 1, position.y);
         }
         @Override
-        public Direction rotateLeft() {
-            return new Direction(NORTH);
+        public Orientation rotateLeft() {
+            return S;
         }
         @Override
-        public Direction rotateRight() {
-            return new Direction(SOUTH);
+        public Orientation rotateRight() {
+            return N;
         }
     },
 
-    EAST{
+    E {
         @Override
         public Position goForward(Position position) {
             return new Position(position.x + 1, position.y);
         }
         @Override
-        public Direction rotateLeft() {
-            return new Direction(NORTH);
+        public Orientation rotateLeft() {
+            return N;
         }
         @Override
-        public Direction rotateRight() {
-            return new Direction(SOUTH);
+        public Orientation rotateRight() {
+            return S;
         }
     };
 
-    public abstract Direction rotateLeft();
-    public abstract Direction rotateRight();
+    public abstract Orientation rotateLeft();
+    public abstract Orientation rotateRight();
     public abstract Position goForward(Position position);
     }
