@@ -4,14 +4,12 @@ import main.space.Position;
 import main.space.enums.Orientation;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OrientationTest {
     private final static Position testPosition = new Position(0, 0);
     @Test
-    public void testValidRotationsOfOrientations() throws IOException
+    public void testValidRotationsOfOrientations()
     {
         //Rotations a gauche
         assertEquals(Orientation.N.rotateLeft(), Orientation.W);

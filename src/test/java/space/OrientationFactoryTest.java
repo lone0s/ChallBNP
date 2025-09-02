@@ -5,14 +5,12 @@ import main.space.OrientationFactory;
 import main.space.enums.Orientation;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 public class OrientationFactoryTest {
     @Test
-    public void testGoodOrientation() throws IOException
+    public void testGoodOrientation()
     {
         assertEquals(OrientationFactory.createOrientation('N'), Orientation.N);
         assertEquals(OrientationFactory.createOrientation('S'), Orientation.S);
@@ -21,7 +19,7 @@ public class OrientationFactoryTest {
     }
 
     @Test
-    public void testBadOrientation() throws IOException
+    public void testBadOrientation()
     {
         assertThrowsExactly(InvalidOrientationException.class, () -> OrientationFactory.createOrientation('/'));
     }

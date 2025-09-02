@@ -3,8 +3,8 @@ package main.space.enums;
 import main.space.Position;
 
 public enum Orientation {
-//    TODO: Ajouter des safeguards parce que si la position est hors grid ca doit bloquer !!!
-//     Je ne veux pas que l'Orientation ai connaissance de la grille
+    // J'ai jugé pertinent d'appliquer un élément que j'ai appris lors de mon alternance
+    // Pour éviter d'avoir quatre fichiers supplémentaires, j'ai tout condensé ici
     N
         {
         @Override

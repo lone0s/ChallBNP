@@ -3,16 +3,8 @@ package main.board;
 import main.space.Position;
 
 public class Grid {
-    private int width;
-    private int height;
-    //J'suis pas sur du coup du rover
-    // TODO: Transmitter + Grid + Rover existent séparément
-    //  Transmitter communique message a Rover
-    //  Rover.apply()
-    //  si Grid.isNotValidPosition(Rover.position)
-    //  Rover.revertToOldPosition()
-    //  Loop jusqu'a fin des messages
-
+    private final int width;
+    private final int height;
 
     public Grid(int width, int height) {
         this.width = width;

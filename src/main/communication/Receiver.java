@@ -4,10 +4,9 @@ import main.control.Message;
 import main.space.Position;
 import main.space.enums.Orientation;
 
-// L'équivalent du Rover
+// Le Rover en question !
 public class Receiver {
 
-    // Le transmetteur va gérer si oui ou non le rover continue dans la bonne direction
     private Orientation orientation;
     private Position position;
     private Position oldPosition;
@@ -26,11 +25,6 @@ public class Receiver {
         return orientation;
     }
 
-    // TODO: Voir pour faire en sorte que le message dicte directement l'action finalement
-    //  Trouver une facon pour que message.apply() applique la transformation
-    //  ==> Creer un "transmitter" qui va envoyer des messages aux rovers
-    //  ==> Avoir une méthode "void receiveMessage(Message message) qui applique la transformation
-
     public void revertToOldPosition() {
         this.position = oldPosition;
     }
@@ -41,6 +35,7 @@ public class Receiver {
 
     }
     public void updateDirectionRight() {
+        // Peut se résumer en une ligne, mais l'alternance m'a appris que c'est plus pratique pour le débug comme ça
         Orientation newOrientation = this.orientation.rotateRight();
         this.orientation = newOrientation;
     }

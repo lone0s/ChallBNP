@@ -3,7 +3,6 @@ import main.control.Message;
 import main.parser.Parser;
 import main.communication.Receiver;
 import main.space.enums.Orientation;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,7 +31,7 @@ public class ParserTest {
     }
 
     @Test
-    public void testParsing() throws IOException {
+    public void testParsing() {
         // On test la grid
         int[] gridDimensions = parser.parseGridData();
         assertEquals(gridDimensions[0], 5);
